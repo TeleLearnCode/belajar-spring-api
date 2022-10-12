@@ -1,0 +1,6 @@
+TODO: build microservice
+1. install IntelJ Idea (https://www.jetbrains.com/idea/download/#section=windows)
+2. setup spring via (https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.7.4&packaging=jar&jvmVersion=19&groupId=teleanjar.belajarspring&artifactId=api&name=api&description=Belajar%20buat%20API%20menggunakan%20Spring&packageName=teleanjar.belajarspring.api)
+3. install Java 19
+4. setup GIT (add, commit, push, pull)
+
