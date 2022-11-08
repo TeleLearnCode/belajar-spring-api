@@ -1,0 +1,66 @@
+package teleanjar.belajarspring.api.post_bak.post;
+
+import com.google.gson.Gson;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+import teleanjar.belajarspring.api.post_bak.post.model.PostRequest;
+import teleanjar.belajarspring.api.post_bak.post.model.PostRequestMetaArrayData;
+import teleanjar.belajarspring.api.post_bak.post.model.PostResponse;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/v1/post")
+public class PostController {
+
+    @RequestMapping(value="/create", method= RequestMethod.POST)
+    public void create() {
+        System.out.println("masuk API Create Post");
+    }
+
+    @RequestMapping(value="/list", method= RequestMethod.GET)
+    public List<PostResponse> list() {
+        System.out.println("masuk API List Post");
+        String data = "[{\"id\":1,\"title\":\"Post 1\",\"info\":\"informasi\",\"createdAt\":\"2022-10-22 10:00:00\",\"meta\":{\"data\":\"tes\",\"data_added\":\"tes lagi\",\"arraydata\":[{\"array_data\":\"data 1 arr\"},{\"array_data\":\"data 2 arr\"}]}},{\"id\":2,\"title\":\"Post 2\",\"info\":\"informasi\",\"createdAt\":\"2022-10-25 10:00:00\",\"meta\":{\"data\":\"tes\"}},{\"id\":3,\"title\":\"Post 1\",\"info\":\"informasi\",\"createdAt\":\"2022-10-21 10:00:00\"}]";
+
+//        parsing json => object
+        Gson gson = new Gson();
+        PostRequest[] postRequests = gson.fromJson(data, PostRequest[].class);
+
+        System.out.println("metadata: " + postRequests[0].meta.data);
+        System.out.println("metadata added: " + postRequests[0].meta.dataAdded);
+
+//        versi loop foreach
+        final int[] i = {0};
+        postRequests[0].meta.arraydatas.forEach(item -> {
+            System.out.println("[versi lamda] array_data_: " + item.arrayData + " => " + i[0]);
+            i[0]++;
+        });
+        System.out.println("-=========");
+        int j = 0;
+        for (PostRequestMetaArrayData item : postRequests[0].meta.arraydatas){
+            System.out.println("[versi for biasa] array_data_: " + item.arrayData + " => " + j);
+            j++;
+        }
+        System.out.println("-=========");
+//        versi manual index
+        System.out.println("array_data_1: " + postRequests[0].meta.arraydatas.get(0).arrayData);
+        System.out.println("array_data_2: " + postRequests[0].meta.arraydatas.get(1).arrayData);
+
+        List<PostResponse> postResponses = new ArrayList<>();
+
+//        for (PostRequest p : postRequests){
+//            PostResponse postResponseItem = new PostResponse();
+//            postResponseItem.id = p.id;
+//            postResponseItem.judul = p.title;
+//            postResponseItem.detailData = p.info;
+//            postResponseItem.tanggalBuat = p.createdAt;
+//
+//            postResponses.add(postResponseItem);
+//        }
+
+        return postResponses;
+    }
+}

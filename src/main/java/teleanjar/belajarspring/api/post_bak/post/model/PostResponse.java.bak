@@ -1,0 +1,23 @@
+package teleanjar.belajarspring.api.post_bak.post.model;
+
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import javax.annotation.Generated;
+
+@Generated("jsonschema2pojo")
+public class PostResponse {
+
+    @SerializedName("id")
+    @Expose
+    public Integer id;
+    @SerializedName("judul")
+    @Expose
+    public String judul;
+    @SerializedName("detailData")
+    @Expose
+    public String detailData;
+    @SerializedName("tanggalBuat")
+    @Expose
+    public String tanggalBuat;
+}

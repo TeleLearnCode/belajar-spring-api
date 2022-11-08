@@ -1,0 +1,28 @@
+package teleanjar.belajarspring.api.post_bak.post.model;
+
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import javax.annotation.Generated;
+
+@Generated("jsonschema2pojo")
+public class PostRequest {
+
+    @SerializedName("id")
+    @Expose()
+    public Integer id;
+    @SerializedName("title")
+    @Expose
+    public String title;
+    @SerializedName("info")
+    @Expose
+    public String info;
+    @SerializedName("createdAt")
+    @Expose
+    public String createdAt;
+
+    @SerializedName("meta")
+    @Expose
+    public PostRequestMeta meta;
+
+}

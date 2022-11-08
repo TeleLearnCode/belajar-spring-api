@@ -1,6 +1,28 @@
-TODO: build microservice
-1. install IntelJ Idea (https://www.jetbrains.com/idea/download/#section=windows)
-2. setup spring via (https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.7.4&packaging=jar&jvmVersion=19&groupId=teleanjar.belajarspring&artifactId=api&name=api&description=Belajar%20buat%20API%20menggunakan%20Spring&packageName=teleanjar.belajarspring.api)
-3. install Java 19
-4. setup GIT (add, commit, push, pull)
+TODO: build microservice API with spring
+1. [v] install IntelJ Idea (https://www.jetbrains.com/idea/download/#section=windows)
+2. [v] setup spring via (https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.7.4&packaging=jar&jvmVersion=19&groupId=teleanjar.belajarspring&artifactId=api&name=api&description=Belajar%20buat%20API%20menggunakan%20Spring&packageName=teleanjar.belajarspring.api)
+3. [v] install Java 19
+4. [v] setup GIT (add, commit, push, pull)
+------------------Rabu => 2022-10-12
+1. add dependency spring for Web & API (from maven repository)
+            <dependency>
+     			<groupId>org.springframework.boot</groupId>
+     			<artifactId>spring-boot-starter-data-jpa</artifactId>
+     		</dependency>
+     		<dependency>
+     			<groupId>org.springframework.boot</groupId>
+     			<artifactId>spring-boot-starter-web</artifactId>
+     		</dependency>
+     		<dependency>
+     			<groupId>mysql</groupId>
+     			<artifactId>mysql-connector-java</artifactId>
+     			<scope>runtime</scope>
+     		</dependency>
+2.
+------------------Selasa => 2022-10-18
+------------------Selasa => 2022-10-25
+(done)
+------------------Rabu => 2022-11-02
+------------------Selasa => 2022-11-08
+
 
