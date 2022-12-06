@@ -4,8 +4,11 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.web.bind.annotation.*;
 import teleanjar.belajarspring.api.post.model.PostRequest;
 import teleanjar.belajarspring.api.post.model.PostResponse;
+import teleanjar.belajarspring.api.post.model.PostResponseWithData;
 import teleanjar.belajarspring.api.post.model.PostTable;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -68,7 +71,19 @@ public class PostController {
     }
 
     @RequestMapping(value="/list", method= RequestMethod.GET)
-    public void list() {
-        System.out.println("masuk API List Post");
+    public List<PostResponseWithData> list() {
+        List<PostResponseWithData> responses = new ArrayList<>();
+        List<PostTable> posts =  postRepository.findAll();
+
+        posts.forEach(postTable -> {
+            PostResponseWithData res = new PostResponseWithData();
+            res.id = postTable.getId();
+            res.title = postTable.getTitle();
+            res.description = postTable.getDescription();
+
+            responses.add(res);
+        });
+
+        return responses;
     }
 }
