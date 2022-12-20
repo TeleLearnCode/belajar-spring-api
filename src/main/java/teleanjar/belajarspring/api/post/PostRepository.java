@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import teleanjar.belajarspring.api.post.model.PostTable;
 
-public interface PostRepository extends JpaRepository<PostTable, Long> {
+import java.util.Optional;
 
+public interface PostRepository extends JpaRepository<PostTable, Long> {
+    Optional<PostTable> findByTitle(String title);
 }
