@@ -16,8 +16,6 @@ public class CommentTable {
     @Column(nullable = false)
     private Integer vote = 0;
 
-    private Set<>
-
     @Column(nullable = true, length = 20)
     private String createdBy;
 
